@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 @RestController
@@ -19,7 +20,7 @@ public class APIController {
     private LabelService labelService;
 
     @GetMapping("/labels/changes")
-    public Map<String, String> getLabelChanges(@RequestParam long since) {
+    public Map<String, String> getLabelChanges(@RequestParam LocalDate since) {
         return labelService.getLabelChanges(since);
     }
 
